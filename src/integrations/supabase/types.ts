@@ -14,7 +14,69 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      expert_tips: {
+        Row: {
+          category: string
+          content: string
+          created_at: string
+          expert_name: string
+          expert_title: string | null
+          id: string
+          image_url: string | null
+          title: string
+        }
+        Insert: {
+          category: string
+          content: string
+          created_at?: string
+          expert_name: string
+          expert_title?: string | null
+          id?: string
+          image_url?: string | null
+          title: string
+        }
+        Update: {
+          category?: string
+          content?: string
+          created_at?: string
+          expert_name?: string
+          expert_title?: string | null
+          id?: string
+          image_url?: string | null
+          title?: string
+        }
+        Relationships: []
+      }
+      workout_feedback: {
+        Row: {
+          comment: string | null
+          created_at: string
+          id: string
+          improvement_suggestions: string | null
+          rating: number
+          user_id: string
+          workout_id: string
+        }
+        Insert: {
+          comment?: string | null
+          created_at?: string
+          id?: string
+          improvement_suggestions?: string | null
+          rating: number
+          user_id: string
+          workout_id: string
+        }
+        Update: {
+          comment?: string | null
+          created_at?: string
+          id?: string
+          improvement_suggestions?: string | null
+          rating?: number
+          user_id?: string
+          workout_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
